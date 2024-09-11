@@ -211,4 +211,6 @@ a:focus-visible {
 	}
 }
 
-@media only screen and (max-device-width: 500px){ }
+@media only screen and (max-device-width: 500px){ 
+	.enter { width: 90px; height: 90px; left: calc(50% - 90px / 2 ); top: calc(50% - 90px / 2 ); }
+ }
