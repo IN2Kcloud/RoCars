@@ -25,19 +25,18 @@ supportsCssVars() || alert("Please view this demo in a modern browser that suppo
 
 <body class="demo-1 loading">
 	<main>
+		<div class="absolute">
+			<div class="absolute inset-0 jc">
+			  <div class="bg-shape1 bg-pr o50 bg-blur"></div>
+			  <div class="bg-shape2 bg-gd o50 bg-blur"></div>
+			  <div class="bg-shape1 bg-rd o50 bg-blur"></div>
+			</div>
+		</div>
 		<svg class="circles" width="100%" height="100%" viewBox="0 0 1400 1400">
 			<def>
-				<path id="circle-1" d="M250,700.5A450.5,450.5 0 1 11151,700.5A450.5,450.5 0 1 1250,700.5"></path>
-				<path id="circle-2" d="M382,700.5A318.5,318.5 0 1 11019,700.5A318.5,318.5 0 1 1382,700.5"></path>
 				<path id="circle-3" d="M487,700.5A213.5,213.5 0 1 1914,700.5A213.5,213.5 0 1 1487,700.5"></path>
 				<path id="circle-4" d="M567.5,700.5A133,133 0 1 1833.5,700.5A133,133 0 1 1567.5,700.5"></path>
 			</def>
-			<!--<text class="circles__text circles__text--1">
-				<textPath class="circles__text-path" xlink:href="#circle-1" aria-label="" textLength="2830"> a unique way to visit the most popular Auto Shows without leaving your home! </textPath>
-			</text>-->
-			<!--<text class="circles__text circles__text--2">
-				<textPath class="circles__text-path" xlink:href="#circle-2" aria-label="" textLength="2001"> a unique way to visit the most popular Auto Shows without leaving your home! </textPath>
-			</text>-->
 			<text class="circles__text circles__text--3">
 				<textPath class="circles__text-path" xlink:href="#circle-3" aria-label="" textLength="1341"> a unique way to visit the most popular Auto Shows without leaving your home! </textPath>
 			</text>
@@ -54,7 +53,6 @@ supportsCssVars() || alert("Please view this demo in a modern browser that suppo
 
 		<button class="enter">
 			<div class="enter__bg"> <img src="RoCarsW.png" alt="" srcset=""> </div>
-			<!--<span class="enter__text">Enter</span>-->
 		</button>
 		
 	</main>
