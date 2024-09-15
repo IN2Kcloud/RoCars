@@ -9,8 +9,6 @@
 }
 
 @font-face{font-family:'LEMONMILK-Regular';src:url('LEMONMILK-Regular.otf') format('opentype');font-display:swap;}
-@font-face{font-family:'Aeroxys';src:url('Aeroxys.ttf') format('truetype');font-display:swap;}
-@font-face{font-family:'Assen-Demo';src:url('Assen-Demo.otf') format('opentype');font-display:swap;}
 @font-face{font-family:'Building\ State\ Empire';src:url('Building\ State\ Empire.ttf') format('truetype');font-display:swap;}
 @font-face{font-family:'Mandan\ Demo';src:url('Mandan\ Demo.otf') format('opentype');font-display:swap;}
 
@@ -20,14 +18,8 @@ body {
 	--color-bg: #000000;
 	--color-link: #d6af7c;
 	--color-link-hover: #fff;
-	--color-text-circle-1: #eeeeee;
-	--color-text-circle-2: #eee;
 	--color-text-circle-3: #eee;
 	--color-text-circle-4: #eee;
-	--font-circle-1: 'Aeroxys', niagara, sans-serif;
-	--font-weight-circle-1: 400;
-	--font-circle-2: 'Assen-Demo', modesto-condensed, serif;
-	--font-weight-circle-2: 400;
 	--font-circle-3: 'Building\ State\ Empire', ambroise-firmin-std, sans-serif;
 	--font-weight-circle-3: 400;
 	--font-circle-4: 'Mandan\ Demo', niagara, serif;
@@ -40,9 +32,7 @@ body {
 	font-family: tenon, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background: var(--color-bg) url(bgIII.jpg) no-repeat 50% 50% fixed;
-	background-size: cover;
-}
+	}
 
 a {
 	text-decoration: none;
@@ -76,6 +66,31 @@ a:focus-visible {
 	outline: 2px solid red;
 	background: transparent;
 }
+
+.absolute{ position: absolute; /*top: 50px !important;*/ inset: 0; justify-content: center; display: inline-flex; flex-direction: row; max-width: 100vw; overflow-x: hidden; overflow-y: visible;}
+.jc {justify-content: center;}
+.bg-shape1{width: 500px; height: 500px; border-radius: 9999px; position: relative; animation: one 10s infinite;}
+.bg-shape2{width: 300px; height: 300px; border-radius: 9999px; position: relative; animation: two 10s infinite;}
+@keyframes one{
+	0%{left: 0px; top: 0px;}
+	25%{left: -100px; top: 70px;}
+	50%{left: 20px; top: 150px;}
+	75%{left: 50px; top: 100px;}
+	100%{left: 0px; top: 0px;}
+}
+@keyframes two{
+	0%{left: 0px; top: 0px;}
+	25%{left: 50px; top: 10px;}
+	50%{left: 100px; top: 50px;}
+	75%{left: 50px; top: 100px;}
+	100%{left: 0px; top: 0px;}
+}
+
+.o50{opacity: .5;}
+.bg-blur{filter: blur(90px);}
+.bg-pr{background-color: #444000;}
+.bg-rd{background-color: #440000;}
+.bg-gd{background-color: #ffd000;}
 
 .enter {
 	display: block;
@@ -165,24 +180,6 @@ a:focus-visible {
 	text-transform: uppercase;
 	transform-origin: 700px 700px;
 	will-change: transform, opacity;
-}
-
-.circles__text--1 {
-	font-size: 25vmin;
-	font-size: clamp(170px,25vmin,180px);
-	font-family: var(--font-circle-1);
-	font-weight: var(--font-weight-circle-1);
-	fill: var(--color-text-circle-1);
-	filter: drop-shadow(0px 0px 4px #eee)
-}
-
-.circles__text--2 {
-	font-size: 17vmin;
-	font-size: clamp(136px,17vmin,153px);
-	font-family: var(--font-circle-2);
-	font-weight: var(--font-weight-circle-2);
-	fill: var(--color-text-circle-2);
-	filter: drop-shadow(0px 0px 4px #eee)
 }
 
 .circles__text--3 {
