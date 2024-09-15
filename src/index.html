@@ -10,120 +10,43 @@
 		<link rel="shortcut icon" href="../RoCars.png">
 		<link rel="stylesheet" href="https://use.typekit.net/uok8swb.css">
 		<link rel="stylesheet" type="text/css" href="css/base.css" />
-		<script>
-		document.documentElement.className = "js";
-		var supportsCssVars = function() { var e, t = document.createElement("style"); return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e };
-		supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
-		</script>
-	</head>
-	<body class="demo-3">
-		<main>
-			<div class="text-container">
-				<div class="socials">
-				  <span><a href="https://www.instagram.com/rocarstv/" target="_blank" class="socialsII">
-					<i class="fa-brands fa-instagram" style="color: #f1faee;"></i>
-				  </a></span>
-		  
-				  <span><a href="https://www.youtube.com/@RoCarsTV" target="_blank" class="socialsII">
-					<i class="fa-brands fa-youtube" style="color: #f1faee;"></i>
-				  </a></span>
-		
-				  <span><a href="mailto:rocarsinfo@gmail.com" target="_blank" class="socialsII">
-					<i class="fa-solid fa-envelope" style="color: #f1faee;"></i>
-				  </a></span>
-				</div>
-			</div>
-			<div class="content">
-				<div id="app"></div>
-				<div class="content__title-wrap">
-					<!--<span class="content__pretitle">CLICK & HOLD</span>-->
-					<div class="ci">
-					    <img src="../RoCarsW.png" alt="" srcset="">
-					</div>
-					<span class="content__title">RoCars</span>
-					<!--<a class="content__link fade-in-out" href="brands/index.html" target="_blank">Join us</a>-->
-				</div>
-			</div>
-			<a class="fade-in-out car" href="cars/index.html" target="_blank" rel="noopener noreferrer">
-				<div class="cars"><span>GALLERY <i class="fa-solid fa-play" style="color: #eee;"></i></span></div>
-			</a>
-		</main>
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+  <div class="absolute">
+    <div class="absolute inset-0 jc">
+      <div class="bg-shape1 bg-pr o50 bg-blur"></div>
+      <div class="bg-shape2 bg-gd o50 bg-blur"></div>
+      <div class="bg-shape1 bg-rd o50 bg-blur"></div>
+    </div>
+  </div>
 
-		<script src="js/three.min.js"></script>
-		<script src="js/postprocessing.min.js"></script>
-		<script src="js/InfiniteLights.js"></script>
-		<script src="js/Distortions.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js" integrity="sha512-u3fPA7V8qQmhBPNT5quvaXVa1mnnLSXUep5PS1qo5NRzHwG19aHmNJnj1Q8hpA/nBWZtZD4r4AX6YOt5ynLN2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <div class="text-container">
+        <div class="socials">
+          <span><a href="https://www.instagram.com/rocarstv/" target="_blank" class="socialsII">
+            <i class="fa-brands fa-instagram" style="color: #f1faee;"></i>
+          </a></span>
+  
+          <span><a href="https://www.youtube.com/@RoCarsTV" target="_blank" class="socialsII">
+            <i class="fa-brands fa-youtube" style="color: #f1faee;"></i>
+          </a></span>
 
-		<script>
-		(function() {
+          <span><a href="mailto:rocarsinfo@gmail.com" target="_blank" class="socialsII">
+            <i class="fa-solid fa-envelope" style="color: #f1faee;"></i>
+          </a></span>
+        </div>
+    </div>
 
-			const container = document.getElementById('app');
+    <div id="bm">
+        <video autoplay loop muted src="Motion Edits Tutorial (converted)_AME/RoCars.mp4"></video>
+    </div>
 
-			const options = {
-				onSpeedUp: (ev) => {					
-				},
-				onSlowDown: (ev) => {
-				},
-				// mountainDistortion || LongRaceDistortion || xyDistortion || turbulentDistortion || turbulentDistortionStill || deepDistortionStill || deepDistortion
-				distortion: xyDistortion, 
-				
-				length: 400,
-				roadWidth: 9,
-				islandWidth: 2,
-				lanesPerRoad: 3,
-
-				fov: 90,
-				fovSpeedUp: 150,
-				speedUp: 3,
-				carLightsFade: 0.4,
-
-				totalSideLightSticks: 50,
-				lightPairsPerRoadWay: 30,
-
-				// Percentage of the lane's width
-				shoulderLinesWidthPercentage: 0.05,
-				brokenLinesWidthPercentage: 0.1,
-				brokenLinesLengthPercentage: 0.5,
-
-				/*** These ones have to be arrays of [min,max].  ***/
-				lightStickWidth: [0.02, 0.05],
-				lightStickHeight: [0.3, 0.7],
-
-				movingAwaySpeed: [20, 50],
-				movingCloserSpeed: [-150, -230],
-
-				/****  Anything below can be either a number or an array of [min,max] ****/
-
-				// Length of the lights. Best to be less than total length
-				carLightsLength: [400 * 0.05, 400 * 0.2],
-				// Radius of the tubes
-				carLightsRadius: [0.03, 0.08],
-				// Width is percentage of a lane. Numbers from 0 to 1
-				carWidthPercentage: [0.1, 0.5],
-				// How drunk the driver is.
-				// carWidthPercentage's max + carShiftX's max -> Cannot go over 1. 
-				// Or cars start going into other lanes 
-				carShiftX: [-0.5, 0.5],
-				// Self Explanatory
-				carFloorSeparation: [0, 0.1],
-
-				colors: {
-					roadColor: 0x080808,
-					islandColor: 0x0a0a0a,
-					background: 0x000000,
-					shoulderLines: 0x131318,
-					brokenLines: 0x131318,
-					/***  Only these colors can be an array ***/
-					leftCars: [0x7D0D1B, 0xA90519, 0xff102a],
-					rightCars: [0xF1EECE, 0xE6E2B1, 0xDFD98A],
-					sticks: 0xF1EECE,
-				}
-			};
-
-			const myApp = new App(container, options);
-			myApp.loadAssets().then(myApp.init)
-		})()
-		</script>
-	</body>
+    <a class="fade-in-out car" href="cars/index.html" target="_blank" rel="noopener noreferrer">
+      <div class="cars"><span>GALLERY <i class="fa-solid fa-play" style="color: #eee;"></i></span></div>
+    </a>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js" integrity="sha512-u3fPA7V8qQmhBPNT5quvaXVa1mnnLSXUep5PS1qo5NRzHwG19aHmNJnj1Q8hpA/nBWZtZD4r4AX6YOt5ynLN2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="index.js"></script>
+</body>
 </html>
