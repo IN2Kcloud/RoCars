@@ -158,3 +158,12 @@ a { text-decoration: none; color: #fff; outline: none; }
 a {text-decoration:none;color:#111;outline:none;}
 a:hover,a:focus {color:#000;outline:none;}
 @media (max-width:500px) {.marquee span,.menu__item-link {font-size:5vw;line-height:2;}.logo a,.menu-logo a {font-size:50px;}.col-2 {position:absolute;width:100%;}.header h1 {font-size:66px;height:120px;}.socials {gap:4em;flex-direction:row;}.header {left:50%;transform:translateX(-50%);width:300px;bottom:15vw;}.video-wrapper {width:333px;}}
+
+/* CSS from other files */
+.loading{display:flex;align-items:center;justify-content:center;position:fixed;top:0;right:0;bottom:0;left:0;z-index:100;background:#eeff00;opacity:0;transition:0.5s;}
+.before-load .loading{opacity:1;}
+@keyframes loading-spin{100%{transform:rotate(360deg);}}
+@keyframes loading-circle-ani{0%{stroke-dashoffset:157;}75%{stroke-dashoffset:-147;}100%{stroke-dashoffset:-157;}}
+.loading-circle{width:100px;height:100px;animation:loading-spin 2s infinite;}
+.loading-circle img{width:100px;height:100px;}
+.loading-circle circle{stroke:#171010;stroke-width:4;stroke-dasharray:157,157;stroke-dashoffset:0;fill:transparent;animation:loading-circle-ani 1s infinite;}
